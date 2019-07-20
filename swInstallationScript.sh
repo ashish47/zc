@@ -1,6 +1,5 @@
 #!/bin/bash
-git clone https://github.com/rajeshmanapat/Voyager-Zone-Controller.git --branch trackerID_removal --single-branch
-git clone https://github.com/gitofanarghya/ZC-UI
+git clone https://github.com/astralpresence/voyagerRelease Voyager-Zone-Controller
 
 
 #install node
