@@ -2,7 +2,7 @@
 sudo raspi-config --expand-rootfs
 
 #For UI to host at zc.ftcsolar.com change dnsmasq and host config 
-sudo mv Voyager-Zone-Controller/misc/dnsmasq.conf /etc/dnsmasq.conf
+sudo mv Voyager-Zone-Controller/Networking/dnsmasq.conf /etc/dnsmasq.conf
 echo -e "192.168.4.1\tzc" |sudo tee -a /etc/hosts
 
 #To enable xbee communication 
