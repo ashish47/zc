@@ -7,7 +7,7 @@ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # add UI dependencies
-cd /home/pi/ZC-UI/
+cd /home/pi/Voyager-Zone-Controller/ui/
 npm install express
 npm install socketio
 npm install mqtt
