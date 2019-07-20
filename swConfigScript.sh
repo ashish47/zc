@@ -50,10 +50,9 @@ sleep 5
 
 
 #Editing configuration files for access point creation
-mac_id=$(cat /sys/class/net/wlan0/address)
 echo -e "\ninterface wlan1\n    static ip_address=192.168.4.1/24\n    nohook wpa_supplicant" | sudo tee -a /etc/dhcpcd.conf
 echo -e "interface=wlan1\n    dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,96000h" | sudo tee -a /etc/dnsmasq.conf
-echo -e "interface=wlan1\ndriver=nl80211\nhw_mode=g\nchannel=7\nwmm_enabled=0\nmacaddr_acl=0\nauth_algs=1\nignore_broadcast_ssid=0\nwpa=2\nssid=VZC_$mac_id\nwpa_passphrase=sunshine\nwpa_key_mgmt=WPA-PSK\nwpa_pairwise=TKIP\nrsn_pairwise=CCMP" | sudo tee -a /etc/hostapd/hostapd.conf
+echo -e "interface=wlan1\ndriver=nl80211\nhw_mode=g\nchannel=7\nwmm_enabled=0\nmacaddr_acl=0\nauth_algs=1\nignore_broadcast_ssid=0\nwpa=2\nssid=VZC_default_zoneID\nwpa_passphrase=sunshine\nwpa_key_mgmt=WPA-PSK\nwpa_pairwise=TKIP\nrsn_pairwise=CCMP" | sudo tee -a /etc/hostapd/hostapd.conf
 echo -e "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"" | sudo tee -a /etc/default/hostapd
 echo -e "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 sudo systemctl unmask hostapd
