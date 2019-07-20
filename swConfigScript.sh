@@ -1,5 +1,6 @@
-#Expand file system of SD card to 16GB
-sudo raspi-config --expand-rootfs
+# Resore default settings to DB
+mongorestore /home/pi/Voyager-Zone-Controller/dump
+
 
 #For UI to host at zc.ftcsolar.com change dnsmasq and host config 
 sudo mv Voyager-Zone-Controller/Networking/dnsmasq.conf /etc/dnsmasq.conf
@@ -44,9 +45,7 @@ sudo cp /home/pi/Voyager-Zone-Controller/misc/mongodb-server /etc/logrotate.d/mo
 
 sudo systemctl stop dnsmasq
 sudo systemctl stop hostapd
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 sudo service dhcpcd restart
-sleep 5
 
 
 #Editing configuration files for access point creation
@@ -58,18 +57,17 @@ echo -e "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 sudo systemctl unmask hostapd
 sudo systemctl start hostapd
 sudo systemctl start dnsmasq
-sleep 5
+
 sudo iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
 sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
-sleep 2
+
 #Start hotspot on boot
 sudo update-rc.d hostapd enable
 sudo update-rc.d dnsmasq enable
-sleep 3
+
 echo "Accesspoint Setup done"
 
-# Resore default settings to DB
-mongorestore /home/pi/Voyager-Zone-Controller/dump
+
 
 #Give execute permissions to services installation script 
 sudo chmod +744 /home/pi/Voyager-Zone-Controller/misc/installServices.sh
@@ -82,5 +80,8 @@ sudo chmod +744 /home/pi/Voyager-Zone-Controller/misc/installServices.sh
 sudo hwclock -w
 
 sudo cp /home/pi/Voyager-Zone-Controller/misc/nsswitch.conf /etc/nsswitch.conf
+
+#Expand file system of SD card to 16GB
+sudo raspi-config --expand-rootfs
 
 sudo reboot
