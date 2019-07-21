@@ -1,0 +1,24 @@
+Raspbian Version
+http://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/2019-04-08-raspbian-stretch.zip
+
+Raspbian Stretch 2019 04 08
+
+Framework Versions
+
+*************** MONGO ***************
+ MongoDB shell version: 2.4.14  
+*************** NODE ***************
+ v11.15.0  
+*************** NPM ***************
+ 6.7.0  
+*************** Mosquitto MQTT ***************
+ i  1.4.10-3+deb9u4 oldstable 500  
+*************** DNS Masq ***************
+ Dnsmasq version 2.76  ‘
+*************** Samba ***************
+ Version 4.5.16-Debian  
+*************** Host APD ***************
+ hostapd v2.6
+************ Win Bind Daemon **********
+ Version 4.5.16-Debian
+
