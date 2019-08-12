@@ -17,7 +17,8 @@ sudo sed -i 's/console=serial0,115200 //g' /boot/cmdline.txt
 #Crontab editions
 crontab -l > mycron
 #echo new cron into cron file
-echo "00 00 * * * /home/pi/Voyager-Zone-Controller/misc/ntpPull" >> mycron
+echo "0 0 * * * /home/pi/Voyager-Zone-Controller/misc/ntpPull" >> mycron
+echo "0 0 * * * /home/pi/Voyager-Zone-Controller/misc/setRoverTime" >> mycron
 echo "@reboot /home/pi/Voyager-Zone-Controller/misc/pullTimeFromHwClockIfNoNet" >> mycron
 #install new cron file
 crontab mycron
