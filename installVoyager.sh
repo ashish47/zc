@@ -7,25 +7,36 @@ npm install express
 npm install socketio
 npm install mqtt
 
+
+#replace default rc.local file with our rc.local file
+sudo cp /home/pi/Voyager-Zone-Controller/misc/rc.local /etc/rc.local
+
 #For UI to host at zc.ftcsolar.com change dnsmasq and host config 
-sudo mv /home/pi/Voyager-Zone-Controller/Networking/dnsmasq.conf /etc/dnsmasq.conf
+sudo cp /home/pi/Voyager-Zone-Controller/Networking/dnsmasq.conf /etc/dnsmasq.conf
 echo -e "192.168.4.1\tzc" |sudo tee -a /etc/hosts
 
 #To enable xbee communication 
 sudo sed -i 's/console=serial0,115200 //g' /boot/cmdline.txt
 
 #Crontab editions
-crontab -l > mycron
+sudo systemctl enable cron.service
+sudo crontab -l > mycron
 #echo new cron into cron file
 echo "00 00 * * * /home/pi/Voyager-Zone-Controller/misc/ntpPull" >> mycron
 echo "@reboot /home/pi/Voyager-Zone-Controller/misc/pullTimeFromHwClockIfNoNet" >> mycron
+echo "00 00 * * * /home/pi/Voyager-Zone-Controller/dist/setRoverTime" >> mycron
+
+
 #install new cron file
-crontab mycron
+sudo crontab mycron
 rm mycron
 
 
 #copy config file
 sudo cp /home/pi/Voyager-Zone-Controller/misc/config.txt /boot/config.txt
+
+#copy dns config file
+sudo cp /home/pi/Voyager-Zone-Controller/misc/resolv.conf /etc/resolv.conf
 
 # Change default password to sunshine
 echo -e "raspberry\nsunshine\nsunshine\n" | passwd
@@ -78,10 +89,28 @@ sudo chmod +744 /home/pi/Voyager-Zone-Controller/misc/installServices.sh
 # Install services
 /home/pi/Voyager-Zone-Controller/misc/installServices.sh
 
+#nginx configuration
+sudo rm /etc/nginx/nginx.conf
+sudo cp /home/pi/Voyager-Zone-Controller/misc/nginx.conf /etc/nginx/nginx.conf
+sudo cp /home/pi/Voyager-Zone-Controller/misc/zcEngine /etc/nginx/sites-available/
+sudo rm /etc/nginx/sites-available/default
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/zcEngine /etc/nginx/sites-enabled/zcEngine
+sudo update-rc.d nginx enable
+sudo systemctl stop nginx
+sudo systemctl enable nginx 
+sudo systemctl start nginx
 
 # set time to hardware clock
 sudo hwclock -w
 
 sudo cp /home/pi/Voyager-Zone-Controller/misc/nsswitch.conf /etc/nsswitch.conf
+
+#Switch off power management feature
+sudo iw wlan1 set power_save off
+
+#set timezone to UTC
+sudo timedatectl set-timezone UTC
+
 
 sudo reboot
