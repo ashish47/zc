@@ -21,4 +21,7 @@ sudo apt-get install samba -y
 sudo apt-get install winbind -y
 
 # install remot3.it
-sudo apt install connectd
+sudo apt install connectd -y
+
+# install nginx
+sudo apt-get install nginx -y
