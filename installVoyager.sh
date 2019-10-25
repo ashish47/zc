@@ -47,7 +47,6 @@ echo -e "raspberry\nsunshine\nsunshine\n" | passwd
 # Clock configuration
 sudo systemctl stop fake-hwclock.service
 sudo systemctl disable fake-hwclock.service
-sudo systemctl stop systemd-timesyncd.service
 sudo cp /home/pi/Voyager-Zone-Controller/misc/hwclock-set /lib/udev/hwclock-set
 echo "Clock configuration Done"
 
