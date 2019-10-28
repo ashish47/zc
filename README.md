@@ -1,8 +1,15 @@
-Start with a fresh installation of Raspbian Stretch
+Start with a fresh SD card.
+
+ Steps to create Raspbian Stretch OS Installation
+1. Download OS image from here http://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/2019-04-08-raspbian-stretch.zip
+2. Install balena etcher or any other disk writing software and write the downloaded image to the SD card
+3. Add a an empty file named ".ssh" into the boot drive of SD card
+4. Connect RPi to router using ethernet, find the IP in the router page and ssh into it using username "pi" and password "raspberry"
+
 
  Steps to Create BASE IMAGE 
  
-1. Clone the repo found here 
+1. Clone the repo found here using "git clone https://github.com/AstralPresence/zc/edit/master/README.md"
 2. Change Directory into the cloned repo. 
 3. Run installFrameworks.sh using “./installFrameworks.sh”
 
