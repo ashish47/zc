@@ -20,7 +20,7 @@ Start with work environment
 
 
 
-5. Run the makeRelease from the /home/pi script with the version name as argument as shown below
+5. Run the makeRelease script from the /home/pi directory with the version name as argument as shown below
     5.1 Give execute permissions to makeRelease script using "sudo chmod +x makeRelease.sh"
     5.2 Run "./makeRelease v1.5
     
