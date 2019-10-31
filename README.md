@@ -9,7 +9,7 @@ Start with a fresh SD card.
 
  Steps to Create BASE IMAGE 
  
-1. Clone the repo found here using "git clone https://github.com/AstralPresence/zc/edit/master/README.md"
+1. Clone the repo found here using "git clone https://github.com/AstralPresence/zc"
 2. Change Directory into the cloned repo. 
 3. Run installFrameworks.sh using “./installFrameworks.sh”
 
