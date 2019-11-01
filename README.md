@@ -19,8 +19,9 @@ Start with a fresh SD card.
  Steps to Create PRE RELEASE IMAGE 
 
 Start with BASE IMAGE
-1. Run installVoyager.sh using “./installVoyager.sh branchName> installation.log”
-(This will pull the mentioned branch name from the release repo found here)
+1. Clone the release repo from "/home/pi" directory using the below command, remember to replace $1 with the required branch name
+"git clone https://github.com/astralpresence/voyagerRelease --branch $1 --single-branch Voyager-Zone-Controller"
+2. Run installVoyager.sh using “./installVoyager.sh > installation.log”
 
 
 ***************************  You have Obtained PRE RELEASE IMAGE  ***********************
