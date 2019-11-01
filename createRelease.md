@@ -7,7 +7,7 @@ Start with work environment
 "sudo rm -rf /home/pi/voyagerZoneControllerUI2.0"
 
 2. Run below command from "/home/pi/" to clone the backend into "Voyager-Zone-Controller" folder
-"git clone https://github.com/rajeshmanapat/Voyager-Zone-Controller.git --branch dev --single-branch Voyager-Zone-Controller"
+"git clone  https://github.com/abhisheksiddaramappa/voyagerZoneController2.0 --branch dev --single-branch Voyager-Zone-Controller"
 
    2.1 Freeze all the required binaries 
    
