@@ -1,5 +1,4 @@
 #!/bin/bash
-git clone https://github.com/astralpresence/voyagerRelease --branch $1 --single-branch Voyager-Zone-Controller
 
 # add UI dependencies
 cd /home/pi/Voyager-Zone-Controller/ui/
