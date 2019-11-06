@@ -30,15 +30,22 @@ Steps to Create Release
 
 Start with Pre Release Image(does not matter if shrunk or not)
 1. Burn image to SD card
-2. to EXPAND FILE STORAGE,
-   2.1 run “sudo raspi-config”
-   2.2 go to “advanced settings”
-   2.3 select “expand file system”
-   2.4 when prompted to reboot, select “yes”
-3. Restore Default Settings by running “mongorestore /home/pi/Voyager-Zone-Controller/dump/”
-4. Create unique zcID by running “/home/pi/Voyager-Zone-Controller/dist/uniqueZCIDMaker”
-5. Install Remote.it
-6. Reboot
+2. Insert SD card into ZC
+3. Connect wifi to Hotspot of ZC named "Voyager_default_zoneID"
+4. SSH into 192.168.4.1 with username "pi" and password "sunshine"
+5. to EXPAND FILE STORAGE,
+   5.1 run “sudo raspi-config”
+   5.2 go to “advanced settings”
+   5.3 select “expand file system”
+   5.4 when prompted to reboot, select “yes”
+6. Restore Default Settings using “mongorestore /home/pi/Voyager-Zone-Controller/dump/”
+7. Create unique zcID using “/home/pi/Voyager-Zone-Controller/dist/uniqueZCIDMaker”
+8. Install Remote.it
+   8.1 run "sudo apt update" then "sudo apt full−upgrade"
+   8.2 run "sudo apt install connectd"
+   8.3 run "sudo connectd_installer"
+   
+9. Reboot using "sudo reboot"
 
 **************  You have Obtained RELEASE IMAGE  ************** 
 
