@@ -3,10 +3,10 @@ Steps to perform software update from 1.x to 1.5
 
 1. Create a tar ball of the the v1.5 release code, use below proceddure on a local linux machine to do so
 
-    1.1 Clone the release using "git clone https://github.com/AstralPresence/voyagerRelease --branch v1.5 --single-branch releaseRepo"
+    1.1 Clone the release using "git clone https://github.com/AstralPresence/voyagerRelease --branch v1.5 --single-branch Voyager-Zone-Controller"
         (replace v1.5 with required branch name)
     
-    1.2 Compress into tar ball using "tar -cvf Voyager-Zone-Controller.tar /home/pi/releaseRepo"
+    1.2 Compress into tar ball using "tar -cvf Voyager-Zone-Controller.tar /home/pi/Voyager-Zone-Controller"
     
     
 2. To perform software update
