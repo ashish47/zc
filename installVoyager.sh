@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# add UI dependencies
-cd /home/pi/Voyager-Zone-Controller/ui/
-npm install express
-npm install socketio
-npm install mqtt
 
 
 #replace default rc.local file with our rc.local file
