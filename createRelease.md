@@ -22,7 +22,8 @@ Start with work environment
 
 5. Run the makeRelease script from the /home/pi directory with the version name as argument as shown below
     5.1 Give execute permissions to makeRelease script using "sudo chmod +x makeRelease.sh"
-    5.2 Run "./makeRelease v1.5
+    5.2 Run ./makeRelease 1.8.4
     
-    
+In place of 1.8.4 enter required version number. 
+
 This will make a release and push it to the branch name v1.5 of astralPresence/voyagerRelease repo
