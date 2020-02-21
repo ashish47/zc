@@ -14,6 +14,6 @@ Steps to perform software update from 1.x to 1.5
     2.1 Transfer the tar ball to "/home/pi" directory of the machine to be updated 
     2.2 Download the executable found at https://github.com/abhisheksiddaramappa/voyagerZoneController2.0/blob/dev/dist/performSoftwareUpdate into the /home/pi directory
     2.3 Give executable permission to the downloaded binary usig "sudo chmod +x /home/pi/performSoftwareUpdate"
-    2.4 Run the executable using "./performSoftwareUpdate"
+    2.4 Run the executable using "sudo ./performSoftwareUpdate"
     
 3. Check for the updated successfully message. This indicates a successfull update!
